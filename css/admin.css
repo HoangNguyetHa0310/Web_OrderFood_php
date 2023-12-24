@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}   
+
+.text-center {
+    text-align: center;
+}
+
+.success {
+    width: 50%;
+    padding: 20px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.error {
+    width: 50%;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.warning {
+    width: 50%;
+    padding: 20px;
+    background-color: yellow;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.warning-2 {
+    width: 50%;
+    padding: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.tbl-full {
+    width: 100%;
+}
+
+.tbl-30 {
+    width: 30%;
+}
+
+table tr th {
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td {
+    padding: 1% ;
+}
+
+.btn-danger {
+    background-color: #ffa502 ;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-danger:hover{
+    background-color: #e8bd3c  ;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.btn-primary {
+    background-color: #3742fa ;
+    padding: 1%;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #4f55d9 ;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background-color: red ;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #ff4757;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* css menu */
+.menu {
+    border-bottom: 1px solid grey;
+}
+
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+
+.menu ul li a:hover {
+    color: rgb(86, 83, 83);
+}
+
+/* css main content */
+
+.main-content{
+    /* margin: 1% 0; */
+    background-color:#f1f2f6;
+    padding: 3% 0;
+}
+
+.col-4 {
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+
+/* css footer */
+.footer {
+    background-color: #2f3542;
+    color: white;
+}
+
+/*  css admin */
+
+
+.login {
+    border: 1px solid black;
+    width: 30%;
+    margin: 10% auto;
+    padding: 3%;
+}
