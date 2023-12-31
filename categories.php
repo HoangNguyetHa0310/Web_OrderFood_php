@@ -1,49 +1,64 @@
 <?php include("detail_front/menu.php") ?>
 
 
-    <!-- CAtegories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
+<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Nguyên liệu</h2>
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <?php
+            $sql = "SELECT * FROM tbl_category WHERE active = 'Yes'";
+            $res = mysqli_query($conn, $sql);
 
-            <?php 
-                $sql =  "SELECT * FROM tbl_category WHERE active= 'Yes' "; 
-                $res = mysqli_query($conn ,$sql);
-                $count = mysqli_num_rows($res);
-                if ($count > 0 ) {
-                    while ($row = mysqli_fetch_assoc($res)) {
-                        $id = $row['id'];
-                        $title = $row['title'];
-                        $image_name = $row['image_name'];
-                        ?>
-                            <a href="category-foods.html">  
-                                <div class="box-3 float-container">
-                                    <?php 
-                                        if ($image_name == "") {
-                                            echo '<div class="error">Add Images Failed!</div>';
-                                        }else {
-                                            ?>
-                                                <img src="<?php echo SITEURL ;?>images/category/<?php echo $image_name;?>" alt="Pizza" class="img-responsive img-curve" style="width: 450px; height: 500px; box-shadow: 5px 5px 8px #999;"> ;
-                                            <?php 
-                                        }
-                                    
-                                    ?>
-                                    <h3 class="float-text text-white"><?php echo $title;?></h3>
-                                </div>
-                            </a>
-                        <?php 
-                    }
-                }else {
-                    echo '<div class="error">Category Not Found !</div>';
-                }
+            if (mysqli_num_rows($res) > 0) {
+                $productIndexEgg = 1;
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $image_name = $row['image_name'];
+                    $randomEgg = "randomEgg" . $productIndexEgg; // Tạo id ngẫu nhiên
+
+                    // Tạo một số ngẫu nhiên từ 1 đến 100
+                    $randomNumber = rand(1, 100);
             ?>
-
-            
-
-            <div class="clearfix"></div>
+                    <div class="col-lg-4 col-md-3 col-sm-6">
+                        <div class="card text-center bg-white rounded shadow pt-4 my-4">
+                            <a href="<?= SITEURL; ?>category-foods.php?category_id=<?= $id; ?>" style="text-decoration: none;">
+                                <?php
+                                if ($image_name == "") {
+                                    echo '<div class="error">Add Images Failed!</div>';
+                                } else {
+                                ?>
+                                    <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: -27px; border-radius: 3px;">
+                                <?php
+                                }
+                                ?>
+                                <div class="card-body">
+                                    <h4 class="card-title text-dark" style="float: left;"><?= $title; ?></h4>
+                                    <span style="color: green;">
+                                        <i class="bi bi-egg-fill" ></i> Còn 
+                                        <span id="<?= $randomEgg; ?>"></span>
+                                    </span><br>
+                                    <span style="color: red;">
+                                        <i class="bi bi-egg-fried"></i>
+                                        <span id="<?= $randomEgg; ?>"> Sắp hết hàng </span>
+                                    </span>
+                                </div>
+                                <script>
+                                    // Đặt số ngẫu nhiên vào phần tử có id duy nhất
+                                    document.getElementById("<?= $randomEgg; ?>").innerText = <?= $randomNumber; ?>;
+                                </script>
+                            </a>
+                        </div>
+                    </div>
+            <?php
+                    $productIndexEgg++;
+                }
+            } else {
+                echo '<div class="error text-center">Category Not Found!</div>';
+            }
+            ?>
         </div>
-    </section>
-    <!-- Categories Section Ends Here -->
+    </div>
+
 
 
 

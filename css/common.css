@@ -1,0 +1,43 @@
+
+:root {
+    --teal:#26b0a0;
+    --teal_hover: #158c7e;
+}
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.h-font {
+    font-family: 'Merienda', cursive;
+}
+.h-line {
+    width: 150px;
+    margin: 0 auto;
+    height: 1.7px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.custom-bg {
+    background-color: var(--teal);
+    border-radius: 1px solid var(--teal);
+}
+
+.custom-bg:hover {
+    background-color: var(--teal_hover);
+    border-color: var(--teal_hover);
+}
+

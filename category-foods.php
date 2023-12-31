@@ -11,7 +11,7 @@
             $category_title = $row['title'];
 
         }else {
-            header('location',SITEURL);
+            header('location'.SITEURL);
         }
     ?>
 
@@ -33,7 +33,7 @@
             <h2 class="text-center">Food Menu</h2>
 
             <?php 
-                $sql2 = "SELECT * FROM tbl_food WHERE category_id = $category_id";
+                $sql2 = "SELECT * FROM tbl_food WHERE category_id = $category_id ";
                 $res2 = mysqli_query($conn ,$sql2);
                 $count2 = mysqli_num_rows($res2);
                 if ($count2 > 0) {

@@ -1,7 +1,9 @@
 
+<?php
+ob_start();
+?>
 
-
-<?php include("detail/menu.php") ?>
+<?php include("detail/menu.php");?>
 
 <div class="main-content">
     <div class="wrapper">
@@ -117,7 +119,8 @@
                     // check img is seected or not and upload img oly if selected
                     if($image_name != "") {
                         // 1.rename img 
-                        $ext = end(explode('.',$image_name));
+                        $extArray = explode('.', $image_name);
+                        $ext = end($extArray);
                         // 2.create new img
                         $image_name = "Food-name-".rand(0000,9999).".".$ext;
                         // 3.source path id the current location of the image
@@ -189,3 +192,7 @@
 
 
 <?php include("detail/footer.php") ?>
+
+<?php
+ob_end_flush(); // Flush the output buffer and send it to the browser
+?>
