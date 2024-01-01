@@ -23,6 +23,11 @@
                 padding: 0 35px;
             }
         }
+        .pop:hover {
+            border-top-color: green !important;
+            transform: scale(1.03);
+            transition: all 0.3s;
+        }
     </style>
 </head>
 
@@ -584,56 +589,133 @@
     <div class="container">
         <div class="row justify-content-evenly">
             <?php
-            $sql = "SELECT * FROM tbl_category WHERE active = 'Yes'";
-            $res = mysqli_query($conn, $sql);
+                $sql = "SELECT * FROM tbl_category WHERE active = 'Yes'";
+                $res = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($res) > 0) {
-                $productIndexEgg = 1;
-                while ($row = mysqli_fetch_assoc($res)) {
-                    $id = $row['id'];
-                    $title = $row['title'];
-                    $image_name = $row['image_name'];
-                    $randomEgg = "randomEgg" . $productIndexEgg; // Tạo id ngẫu nhiên
+                if (mysqli_num_rows($res) > 0) {
+                    $productIndexEgg = 1;
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $image_name = $row['image_name'];
+                        $randomEgg = "randomEgg" . $productIndexEgg; // Tạo id ngẫu nhiên
 
-                    // Tạo một số ngẫu nhiên từ 1 đến 100
-                    $randomNumber = rand(1, 100);
-            ?>
-                    <div class="col-lg-4 col-md-3 col-sm-6">
-                        <div class="card text-center bg-white rounded shadow pt-4 my-4">
-                            <a href="<?= SITEURL; ?>category-foods.php?category_id=<?= $id; ?>" style="text-decoration: none;">
-                                <?php
-                                if ($image_name == "") {
-                                    echo '<div class="error">Add Images Failed!</div>';
-                                } else {
-                                ?>
-                                    <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: -27px; border-radius: 3px;">
-                                <?php
-                                }
-                                ?>
-                                <div class="card-body">
-                                    <h4 class="card-title text-dark" style="float: left;"><?= $title; ?></h4>
-                                    <span style="color: green;">
-                                        <i class="bi bi-egg-fill" ></i> Còn 
-                                        <span id="<?= $randomEgg; ?>"></span>
-                                    </span><br>
-                                    <span style="color: red;">
-                                        <i class="bi bi-egg-fried"></i>
-                                        <span id="<?= $randomEgg; ?>"> Sắp hết hàng </span>
-                                    </span>
+                        // Tạo một số ngẫu nhiên từ 1 đến 100
+                        $randomNumber = rand(1, 100);
+                        ?>
+                            <div class="col-lg-4 col-md-3 col-sm-6 pop">
+                                <div class="card text-center bg-white rounded shadow pt-4 my-4">
+                                    <a href="<?= SITEURL; ?>category-foods.php?category_id=<?= $id; ?>" style="text-decoration: none;">
+                                        <?php
+                                        if ($image_name == "") {
+                                            echo '<div class="error">Add Images Failed!</div>';
+                                        } else {
+                                        ?>
+                                            <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: -27px; border-radius: 3px;">
+                                        <?php
+                                        }
+                                        ?>
+                                        <div class="card-body">
+                                            <h4 class="card-title text-dark" style="float: left;"><?= $title; ?></h4>
+                                            <span style="color: green;">
+                                                <i class="bi bi-egg-fill" ></i> Còn 
+                                                <span id="<?= $randomEgg; ?>"></span>
+                                            </span><br>
+                                            <span style="color: red;">
+                                                <i class="bi bi-egg-fried"></i>
+                                                <span id="<?= $randomEgg; ?>"> Sắp hết hàng </span>
+                                            </span>
+                                        </div>
+                                        <script>
+                                            // Đặt số ngẫu nhiên vào phần tử có id duy nhất
+                                            document.getElementById("<?= $randomEgg; ?>").innerText = <?= $randomNumber; ?>;
+                                        </script>
+                                    </a>
                                 </div>
-                                <script>
-                                    // Đặt số ngẫu nhiên vào phần tử có id duy nhất
-                                    document.getElementById("<?= $randomEgg; ?>").innerText = <?= $randomNumber; ?>;
-                                </script>
-                            </a>
-                        </div>
-                    </div>
-            <?php
-                    $productIndexEgg++;
+                            </div>
+                        <?php
+                        $productIndexEgg++;
+                    }
+                } else {
+                    echo '<div class="error text-center">Category Not Found!</div>';
                 }
-            } else {
-                echo '<div class="error text-center">Category Not Found!</div>';
-            }
+            ?>
+        </div>
+    </div>
+
+    <!-- foods  -->
+    <div class="container">
+        <div class="row">
+            <?php 
+                $sql =  "SELECT * FROM tbl_food WHERE active = 'Yes' LIMIT 2"; 
+                $res = mysqli_query($conn , $sql);
+                $count = mysqli_num_rows($res);
+                
+                if ($count > 0) {
+                    $productIndex = 1;
+                    while($row = mysqli_fetch_assoc($res)){
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $description = $row['description'];
+                        $price = $row['price'];
+                        $image_name = $row['image_name'];
+                        $randomNumberId = 'randomNumber_' . $productIndex;
+                        ?>
+                            <div class="col-lg-4 col-md-6 mb-5 px-4">
+                                <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+                                    <div class="d-block align-items-center mb-2">
+                                        <h4><?php echo $title;?></h4>
+                                        <p class="food-price"><?php echo $price;?> VND</p>
+                                        <p class="food-detail" style="height: 90px;">
+                                            <?php echo $description;?>
+                                        </p>
+                                        <?php 
+                                            if ($image_name == "") {
+                                                echo '<div class="error">Image not available !</div>';
+                                            }else {
+                                                ?>
+                                                    <img style="width: 100%; height: 300px; border-radius: 3px;" src="<?php echo SITEURL;?>/images/food/<?php echo $image_name;?>" class="img-responsive img-curve">
+                                                <?php 
+                                            }
+                                        ?>
+
+                                        <div style="display: flex; align-items: center;" class="rating mb-2 mt-4">
+                                            <h6 class="mb-0 me-3 fw-bold" style=" font-size: 18px; font-family: 'Quicksand', sans-serif;">Số lượng người mua </h6>
+                                            <span>
+                                                <i class="bi bi-person-circle"></i>
+                                                <span id="<?php echo $randomNumberId; ?>"></span>
+                                            </span>
+                                            <script>
+                                                // Tạo một số ngẫu nhiên từ 1 đến 100 và đặt vào phần tử có id duy nhất
+                                                var randomNumber<?php echo $productIndex; ?> = Math.floor(Math.random() * 100) + 1;
+                                                document.getElementById("<?php echo $randomNumberId; ?>").innerText = randomNumber<?php echo $productIndex; ?>;
+                                            </script>
+                                        </div>
+
+                                        <div style="display: flex; align-items: center; " class="">
+                                            <h6 class="m-0 me-3">Đánh giá</h6>
+                                            <span>
+                                                <i class="bi bi-star-fill text-warning "></i>
+                                                <i class="bi bi-star-fill text-warning "></i>
+                                                <i class="bi bi-star-fill text-warning "></i>
+                                                <i class="bi bi-star-fill text-warning "></i>
+                                                <i class="bi bi-star-fill text-warning "></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-evenly mt-4 mb-2">
+                                        <a style="padding: 8px 12px; font-size: 18px;" href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="btn btn-sm text-white custom-bg shadow-none rounded">Đặt ngay</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <?php 
+                        $productIndex++;
+                    }
+                }else{
+                    echo '<div class="error">Foods Not Add !</div>';
+                }
             ?>
         </div>
     </div>

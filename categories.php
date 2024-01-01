@@ -1,7 +1,21 @@
 <?php include("detail_front/menu.php") ?>
 
+    <style>
+        .pop:hover {
+            border-top-color: green !important;
+            transform: scale(1.03);
+            transition: all 0.3s;
+        }
+    </style>
 
-<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Nguyên liệu</h2>
+    <div class="my-5 px-4">
+        <h2 class="fw-bold h-font text-center">Nguyên Liệu</h2>
+        <div class="h-line bg-dark"></div>
+        <p class="text-center mt-3">       
+            Nguyên liệu là nguồn cảm hứng vô tận, nơi mọi sự sáng tạo bắt đầu và hương vị đích thực được tạo nên.
+        </p>
+    </div>
+
     <div class="container">
         <div class="row justify-content-evenly">
             <?php
@@ -20,7 +34,7 @@
                     $randomNumber = rand(1, 100);
             ?>
                     <div class="col-lg-4 col-md-3 col-sm-6">
-                        <div class="card text-center bg-white rounded shadow pt-4 my-4">
+                        <div class="card text-center bg-white rounded shadow pt-4 my-4 pop">
                             <a href="<?= SITEURL; ?>category-foods.php?category_id=<?= $id; ?>" style="text-decoration: none;">
                                 <?php
                                 if ($image_name == "") {
@@ -33,7 +47,7 @@
                                 ?>
                                 <div class="card-body">
                                     <h4 class="card-title text-dark" style="float: left;"><?= $title; ?></h4>
-                                    <span style="color: green;">
+                                    <span style="color: blue;">
                                         <i class="bi bi-egg-fill" ></i> Còn 
                                         <span id="<?= $randomEgg; ?>"></span>
                                     </span><br>

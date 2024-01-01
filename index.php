@@ -101,64 +101,16 @@
     <div class="container availability-form">
         <div class="row">
             <div class="col-lg-12 bg-white shadow p-4 rounded">
-                <h5 class="mb-4 fw-bold" >Trạng thái  </h5>
-                <form action="">
-                    <div class="row align-items-end">
-                        <div class="col-lg-3 mb-3">
-                            <label class="form-label" style="font-weight: 500;">Check-in</label>
-                            <input type="date" class="form-control shadow-none ">
-                        </div>
+                <h5 class="mb-4 fw-bold" >Bạn muốn ăn gì nào ? </h5>
 
-                        <div class="col-lg-3 mb-3">
-                            <label class="form-label" style="font-weight: 500;">Check-out</label>
-                            <input type="date" class="form-control shadow-none ">
-                        </div>
-
-                        <!-- nguoi lon -->
-                        <div class="col-lg-3 mb-3">
-                            <label class="form-label" style="font-weight: 500;">Adult</label>
-                            <select class="form-select shadow-none">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-
-                        <!-- tre con -->
-                        <div class="col-lg-2 mb-3">
-                            <label class="form-label" style="font-weight: 500;">Children</label>
-                            <select class="form-select shadow-none">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-
-                        <!-- btn submit-->
-                        <div class="col-lg-1 mt-2 mb-lg-3 ">
-                            <button type="submit" class="btn text-white rounded custom-bg  ">Submit</button>
-                        </div>
-
-
-                    </div>
+                <form class="d-flex" action="<?php echo SITEURL; ?>food-search.php" method="POST">
+                    <input class="form-control me-2" type="search" placeholder="Tìm Kiếm" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Tìm</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- fOOD sEARCH Section Starts Here -->
-
-    <!-- <section class="food-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL?>food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
-
-        </div>
-    </section> -->
-    <!-- fOOD sEARCH Section Ends Here -->
 
     <?php 
         if (isset($_SESSION['order'])) {
@@ -216,7 +168,7 @@
                                     <h6 class="mb-4" style=" width: 100%; height: 50px;"><?php echo $description;?></h6>
 
                                     <div class="d-flex justify-content-evenly mb-2">
-                                        <a href="<?php echo SITEURL;?>category-foods.php?category_id=<?php echo $id;?>" class="btn btn-sm text-white custom-bg shadow-none rounded">Xem ngay</a>
+                                        <a href="<?php echo SITEURL;?>category-foods.php?category_id=<?php echo $id;?>" class="btn btn-sm text-white custom-bg shadow-none rounded">Xem thêm</a>
                                         <!-- <a href="#" class="btn btn-sm btn-outline-success shadow-none ">More Details</a> -->
                                     </div>
 
@@ -232,16 +184,12 @@
         </div>
     </div>
 
-
-
-    <!-- Categories Section Ends Here -->
-
     <!-- fOOD MEnu Section Starts Here -->
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font "> Món ăn bán chạy </h2>
     <div class="container">
         <div class="row">
             <?php 
-                $sql2 = "SELECT * FROM `tbl_food` WHERE `price` = (SELECT MIN(`price`) FROM `tbl_food`) LIMIT 6";
+                $sql2 = "SELECT * FROM `tbl_food` WHERE `price` = (SELECT MIN(`price`) FROM `tbl_food`) LIMIT 3";
                 $res2 = mysqli_query($conn, $sql2);
                 $count2 = mysqli_num_rows($res2);
                 // check lỗi qty
@@ -424,7 +372,6 @@
             </div>
         </div>
     </div>
-    <!-- fOOD Menu Section Ends Here -->
 
 <script>
     // js banner : chuyển ảnh slide cho phần banner : hoàn thành 

@@ -45,13 +45,13 @@
                             <a class="nav-link me-2" aria-current="page" href="<?php echo SITEURL; ?>" >Trang Chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>categories.php" >Loại Thực Phẩm </a>
+                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>categories.php" >Loại Nguyên Liệu </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>foods.php">Đồ Ăn </a>
+                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>foods.php">Menu </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>contact.php">Liên Hệ</a>
+                            <a class="nav-link me-2" href="<?php echo SITEURL; ?>contact.php">Liên Hệ & Đánh Giá</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link me-2" href="<?php echo SITEURL; ?>about.php">Giới Thiệu</a>
