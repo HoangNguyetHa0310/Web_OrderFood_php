@@ -22,12 +22,12 @@
     <div class="menu">
         <div class="wrapper text-center">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="manage_admin.php">Admin</a></li>
-                <li><a href="manage_category.php">Category</a></li>
-                <li><a href="manage_food.php">Food</a></li>
-                <li><a href="manage_order.php">Order</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="index.php">Trang Chủ</a></li>
+                <li><a href="manage_admin.php">Quản lý Admin</a></li>
+                <li><a href="manage_category.php">Quản lý nguyên liệu</a></li>
+                <li><a href="manage_food.php">Quản lý menu</a></li>
+                <li><a href="manage_order.php">Quản lý đặt đồ</a></li>
+                <li><a href="logout.php">Đăng xuất</a></li>
             </ul>
         </div>
     </div>

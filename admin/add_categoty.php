@@ -4,7 +4,7 @@
 
 <div class="div-content">
     <div class="wrapper">
-        <h1>Add Category</h1><br><br>
+        <h1>Thêm nguyên liệu</h1><br><br>
 
         <?php 
             if(isset($_SESSION['add'])){
@@ -24,14 +24,14 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="tbl-30">
                 <tr>
-                    <td>Title</td>
+                    <td>Tên</td>
                     <td>
                         <input type="text" name="title" placeholder="Category Name">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Select Image</td>
+                    <td>Chọn ảnh</td>
                     <td>
                         <input type="file" name="image" placeholder="Category Name">
                     </td>
@@ -39,7 +39,7 @@
 
                 <tr>
                     <!-- Tinhs chat dac biet  -->
-                    <td>Featured</td> 
+                    <td>Đặc biệt</td> 
                     <td>
                         <input type="radio" name="featured" value="Yes"> Yes
                         <input type="radio" name="featured" value="No"> No
@@ -48,7 +48,7 @@
 
                 <tr>
                     <!-- co dang hoat dong khong  -->
-                    <td>Actives</td> 
+                    <td>Trạng thái hoạt động</td> 
                     <td>
                         <input type="radio" name="active" value="Yes"> Yes
                         <input type="radio" name="active" value="No"> No
@@ -57,7 +57,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Category" class="btn-primary" style="padding: 12px; margin-top: 12px;"> 
+                        <input type="submit" name="submit" value="Thêm nguyên liệu" class="btn-primary" style="padding: 12px; margin-top: 12px;"> 
                     </td>
                 </tr>
 
@@ -95,7 +95,7 @@
                     $update = move_uploaded_file($source_path,$destination_path);
                     // 
                     if ($update == false) {
-                        $_SESSION['upload'] = '<div class="error">Add Images Failed!</div>';
+                        $_SESSION['upload'] = '<div class="error">Thêm ảnh thất bại!</div>';
                         header("location: ".SITEURL."admin/add_categoty.php");
                         die();
                     }
@@ -131,11 +131,11 @@
 
             if ($res == true) {
                 // query successful
-                $_SESSION['add'] = '<div class="success">Add Category Successfully ! </div>';
+                $_SESSION['add'] = '<div class="success">Thêm nguyên liệu thành công ! </div>';
                 header("location:".SITEURL."admin/manage_category.php");
             }else {
                 // query failed
-                $_SESSION['add'] = '<div class="error"> Add Category Failed! </div>';
+                $_SESSION['add'] = '<div class="error"> Thêm nguyên liệu thất bại! </div>';
                 header("location:".SITEURL."admin/manage_category.php");
             }
         }

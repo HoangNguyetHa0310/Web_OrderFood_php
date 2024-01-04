@@ -18,7 +18,7 @@
             
             // if fail to remove the image then an error massgae and stop the process
             if ($remove == false) {
-                $_SESSION['delete'] = '<div class="success"> Failed to remove the image </div>';
+                $_SESSION['delete'] = '<div class="success"> Di chuyển ảnh thất bại </div>';
                 header('Location: '.SITEURL.'admin/manage_category.php');
             }
         }
@@ -28,10 +28,10 @@
         $res = mysqli_query($conn, $sql);
         // if success then redirect to manage category : redirect : là quá trình 
         if ($res == true) {
-            $_SESSION['delete'] = '<div class="success">Delete Category Successfully! </div>';
+            $_SESSION['delete'] = '<div class="success">Xóa thành công! </div>';
             header('Location: '.SITEURL.'admin/manage_category.php');
         }else {
-            $_SESSION['delete'] = '<div class="error"> Delete Category Failed! </div>';
+            $_SESSION['delete'] = '<div class="error"> Xóa thất bại, Hãy thử lại! </div>';
             header('Location: '.SITEURL.'admin/manage_category.php');
         }
 

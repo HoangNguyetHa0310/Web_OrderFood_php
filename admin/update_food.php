@@ -24,35 +24,35 @@ include("detail/menu.php") ?>
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Update Food</h1>
+        <h1>Cập nhập đồ ăn</h1>
         <br><br>
 
         <br><br><br>
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="tbl-30">
                 <tr>
-                    <td>Title</td>
+                    <td>Tên</td>
                     <td>
                         <input type="text" name="title" value="<?php echo $title; ?>">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Description</td>
+                    <td>Mô tả</td>
                     <td>
                         <textarea name="description" id="description" cols="25" rows="5"><?php echo $description; ?></textarea>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Price</td>
+                    <td>Giá</td>
                     <td>
                         <input type="text" name="price" value="<?php echo $price; ?>">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Current image</td>
+                    <td>Ảnh hiện tại</td>
                     <td>
                         <?php 
                         if ($current_image != "") {
@@ -62,14 +62,14 @@ include("detail/menu.php") ?>
                             <?php 
                         } else {
                             // <!-- hiển thị thông báo -->
-                            echo '<div class="error">Image not added</div>';
+                            echo '<div class="error">Ảnh không được thêm</div>';
                         }
                         ?>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>New Image</td>
+                    <td>Ảnh mới</td>
                     <td>
                         <input type="file" name="image">
                     </td>
@@ -77,7 +77,7 @@ include("detail/menu.php") ?>
                 </tr>
 
                 <tr>
-                    <td>Category</td>
+                    <td>Nguyên liệu</td>
                     <td>
                         <select name="category" >
                             <?php 
@@ -94,7 +94,7 @@ include("detail/menu.php") ?>
                                     }
                                 }else {
                                     ?>
-                                        echo '<option value="0" class="error">Category not Invailable !</option>';  
+                                        echo '<option value="0" class="error">Không có nguyên liệu !</option>';  
                                     <?php
                                 }
                         
@@ -104,7 +104,7 @@ include("detail/menu.php") ?>
                 </tr>
 
                 <tr>
-                    <td>Featured</td>
+                    <td>Đặc biệt</td>
                     <td>
                         <input <?php if($featured == "Yes") {echo "checked" ;}?> type="radio" name="featured" value="Yes"> Yes
                         <input <?php if($featured == "No") {echo "checked" ;}?> type="radio" name="featured" value="No"> No
@@ -112,7 +112,7 @@ include("detail/menu.php") ?>
                 </tr>
 
                 <tr>
-                    <td>Active</td>
+                    <td>Trạng thái hoạt động</td>
                     <td>
                         <input <?php if($active == "Yes") {echo "checked" ;}?> type="radio" name="active" value="Yes"> Yes
                         <input <?php if($active == "No") {echo "checked" ;}?> type="radio" name="active" value="No"> No
@@ -127,7 +127,7 @@ include("detail/menu.php") ?>
                             <form action="your_update_food_handler.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
-                                <input type="submit" name="submit" value="Update food" class="btn-primary" style="padding: 12px; margin-top: 12px;">
+                                <input type="submit" name="submit" value="Cập nhật " class="btn-primary" style="padding: 12px; margin-top: 12px;">
                             </form>
                         </td>
                     </tr>
@@ -165,7 +165,7 @@ include("detail/menu.php") ?>
                         $upload = move_uploaded_file($src_path,$dest_path);
     
                         if ($upload == false) {
-                            $_SESSION['upload'] = '<div class="error">Upload Images Failed!</div>';
+                            $_SESSION['upload'] = '<div class="error">Cập nhật ảnh thất bại!</div>';
                             header('location:'.SITEURL.'admin/manage_food.php');
                             die();
                         }
@@ -175,7 +175,7 @@ include("detail/menu.php") ?>
                             $remove = unlink($remove_path);
                         
                             if ($remove == false) {
-                                $_SESSION['remove_failed'] = '<div class="error">Remove Current Image Failed!</div>';
+                                $_SESSION['remove_failed'] = '<div class="error">Xóa ảnh hiện tại thất bại!</div>';
                                 header('location: '.SITEURL.'admin/manage_food.php');
                                 die();
                             }
@@ -201,10 +201,10 @@ include("detail/menu.php") ?>
                 $res3 = mysqli_query($conn, $sql3);
 
                 if ($res3 == true) {
-                    $_SESSION['update'] = '<div class="success"> Update Food Successfully !</div>';
+                    $_SESSION['update'] = '<div class="success"> Cập nhật thành công!</div>';
                     header('location: '.SITEURL.'admin/manage_food.php');
                 } else {
-                    $_SESSION['update'] = '<div class="error"> Update Food Failed !</div>';
+                    $_SESSION['update'] = '<div class="error"> Cập nhật thất bại !</div>';
                     header('location: '.SITEURL.'admin/manage_food.php');
                 }
             }

@@ -78,12 +78,12 @@ if (isset($_POST["submit"])) {
     // 4. Check
     if ($res == true) {
         // echo "Connect Success !"; // chèn data vào database
-        $_SESSION['add'] = '<div class="success">Admin add success !</div>';
+        $_SESSION['add'] = '<div class="success">Thêm admin thành công !</div>';
         header("location: ".SITEURL.'admin/manage_admin.php');
         
     } else {
         // echo "Connect Failure !"; // chèn data thất bại vào database
-        $_SESSION['add'] = '<div class="error">Failed to Add Admin, Try again !</div>';
+        $_SESSION['add'] = '<div class="error">Thêm admin thất bại, Hãy thử lại !</div>';
         header("location: ".SITEURL.'admin/add_admin.php');
     }
 

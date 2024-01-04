@@ -38,7 +38,7 @@
                             <a href="<?= SITEURL; ?>category-foods.php?category_id=<?= $id; ?>" style="text-decoration: none;">
                                 <?php
                                 if ($image_name == "") {
-                                    echo '<div class="error">Add Images Failed!</div>';
+                                    echo '<div class="error">Thêm ảnh thất bại!</div>';
                                 } else {
                                 ?>
                                     <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: -27px; border-radius: 3px;">
@@ -67,7 +67,7 @@
                     $productIndexEgg++;
                 }
             } else {
-                echo '<div class="error text-center">Category Not Found!</div>';
+                echo '<div class="error text-center">Nguyên liệu không được tìm thấy!</div>';
             }
             ?>
         </div>

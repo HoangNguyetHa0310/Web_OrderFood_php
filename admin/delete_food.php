@@ -14,7 +14,7 @@
             $remove = unlink($path);
             
             if ($remove == false) {
-                $_SESSION['upload'] = '<div class="error"> Falied to remove image file ! </div>';
+                $_SESSION['upload'] = '<div class="error"> Xóa ảnh thất bại ! </div>';
                 header("location: ".SITEURL."admin/manage_food.php");
             }
         }
@@ -23,16 +23,16 @@
         $res = mysqli_query($conn , $sql);
         // check 
         if ($res == true) {
-            $_SESSION['delete'] = '<div class="success"> Food Delete Successfully ! </div>';
+            $_SESSION['delete'] = '<div class="success"> Xóa Thành Công ! </div>';
             header("location: ".SITEURL."admin/manage_food.php");
         }else {
-            $_SESSION['delete'] = '<div class="error"> Food Delete Failed ! </div>';
+            $_SESSION['delete'] = '<div class="error"> Xóa Thất Bại ! </div>';
             header("location: ".SITEURL."admin/manage_food.php");
         }
 
     }else {
         // echo "fskjdflksdf";
-        $_SESSION['Cannot_Access'] = '<div class="error"> Cannot Access! </div>'; // không thể truy cập 
+        $_SESSION['Cannot_Access'] = '<div class="error"> Không thể truy cập! </div>'; // không thể truy cập 
         header("location:" . SITEURL."admin/manage_food.php");
     }
 

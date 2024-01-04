@@ -21,7 +21,7 @@
             <?php 
                 $search = isset($_POST['search']) ? $_POST['search'] : '';
             ?>
-            <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title;?>"</a></h2>
+            <h2>Đồ ăn bạn tìm <a href="#" class="text-white">"<?php echo $category_title;?>"</a></h2>
         </div>
 
     </section>
@@ -30,7 +30,7 @@
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+            <h2 class="text-center">Menu đồ ăn</h2>
 
             <?php 
                 $sql2 = "SELECT * FROM tbl_food WHERE category_id = $category_id ";
@@ -49,7 +49,7 @@
                                 <div class="food-menu-img">
                                     <?php 
                                         if ($image_name == "") {
-                                            echo '<div class="error">Image Not Available!</div>';
+                                            echo '<div class="error">Không có ảnh!</div>';
                                         }else{
                                             ?>
                                                 <img src="<?php echo SITEURL?>images/food/<?php echo $image_name;?>"class="img-responsive img-curve" style="100px" height="100px">    
@@ -66,13 +66,13 @@
                                     </p>
                                     <br>
 
-                                    <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="btn btn-primary">Order Now</a>
+                                    <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="btn btn-primary">Đặt đồ ngay !</a>
                                 </div>
                             </div>
                         <?php 
                     }
                 }else {
-                    echo '<div class="error">food not Available !</div>';
+                    echo '<div class="error">Đồ ăn không có !</div>';
                 }
             ?>
 

@@ -7,7 +7,7 @@ ob_start();
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Food</h1>   
+        <h1>Thêm món ăn</h1>   
         <br><br>
 
         <?php 
@@ -21,14 +21,14 @@ ob_start();
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="tbl-30">
                 <tr>
-                    <td>Title</td>
+                    <td>Tên</td>
                     <td>
                         <input type="text" name="title" placeholder="Title Food">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Description </td>
+                    <td>Mô tả </td>
                     <td>
                        <textarea name="description" id="description" cols="25" rows="5" placeholder="Description for food "></textarea>
                     </td>
@@ -36,21 +36,21 @@ ob_start();
 
                 <tr>
                     <!-- Gia -->
-                    <td>Price</td> 
+                    <td>Giá</td> 
                     <td>
                         <input type="number" name="price" > 
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Select Image</td>
+                    <td>Chọn ảnh</td>
                     <td>
                         <input type="file" name="image" placeholder="Image food">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Category</td>
+                    <td>Danh sách</td>
                     <td>
                         <select name="category">
                             <!-- create php to display category from database  -->
@@ -80,7 +80,7 @@ ob_start();
 
                 <tr>
                     <!-- Tinhs chat dac biet  -->
-                    <td>Featured</td> 
+                    <td>Đặc biệt</td> 
                     <td>
                         <input type="radio" name="featured" value="Yes"> Yes
                         <input type="radio" name="featured" value="No"> No
@@ -89,7 +89,7 @@ ob_start();
 
                 <tr>
                     <!-- co dang hoat dong khong  -->
-                    <td>Actives</td> 
+                    <td>Hoạt động</td> 
                     <td>
                         <input type="radio" name="active" value="Yes"> Yes
                         <input type="radio" name="active" value="No"> No
@@ -98,7 +98,7 @@ ob_start();
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Food" class="btn-primary" style="padding: 12px; margin-top: 12px;"> 
+                        <input type="submit" name="submit" value="Thêm món ăn" class="btn-primary" style="padding: 12px; margin-top: 12px;"> 
                     </td>
                 </tr>
 
@@ -130,7 +130,7 @@ ob_start();
                         $upload = move_uploaded_file($src, $dst);
 
                         if ($upload == false) {
-                            $_SESSION['upload'] = '<div class="error"> Failed to upload Image </div>';
+                            $_SESSION['upload'] = '<div class="error"> Thêm ảnh thất bại </div>';
                             header("location:" .SITEURL."admin/add_food.php");
                             die();
                         }
@@ -171,12 +171,12 @@ ob_start();
 
                 if ($res2 == true) {
                     // success
-                    $_SESSION['add'] = '<div class="success"> Upload Food Successfully ! </div>';
+                    $_SESSION['add'] = '<div class="success"> Thêm ảnh thành công ! </div>';
                     header("location:" . SITEURL . "admin/manage_food.php");
                     // exit();
                 } else {
                     // failed
-                    $_SESSION['add'] = '<div class="error"> Upload Food Failed ! </div>';
+                    $_SESSION['add'] = '<div class="error"> Thêm ảnh thất bại ! </div>';
                     header("location:" . SITEURL . "admin/manage_food.php");
                     // exit();
                 }

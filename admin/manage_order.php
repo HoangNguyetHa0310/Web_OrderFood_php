@@ -4,7 +4,7 @@
 <!-- Main content -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Order</h1>
+        <h1>Quản lý đặt đồ</h1>
         <br><br>
 
         <?php 
@@ -15,22 +15,22 @@
         ?>
 
         <br><br><br>
-        <a href="<?php echo SITEURL; ?>admin/add_categoty.php" class="btn-primary">Add Order</a>
+        <a href="<?php echo SITEURL; ?>admin/add_categoty.php" class="btn-primary">Thêm đặt đồ</a>
         <br><br><br>
         <table class="tbl-full">
             <tr>
                 <th>STT</th>
-                <th>Food</th>
-                <th>Price</th>
-                <th>Quantity </th>
-                <th>Total </th>
-                <th>Order Date </th>
-                <th>Status</th>
-                <th>Customer Name </th>
-                <th>Contact </th>
+                <th>Tên đồ ăn</th>
+                <th>Giá</th>
+                <th>Số lượng </th>
+                <th>Tổng </th>
+                <th>Ngày đặt</th>
+                <th>Trạng thái</th>
+                <th>Tên khách</th>
+                <th>Liên hệ</th>
                 <th>Email </th>
-                <th>Address </th>
-                <th>Actions </th>
+                <th>Địa chỉ </th>
+                <th>Chức năng </th>
             </tr>
 
             <?php 
@@ -78,7 +78,7 @@
                                 <td> <?php echo $customer_email;?> </td>
                                 <td> <?php echo $customer_address;?> </td>
                                 <td>
-                                    <a href="<?php echo SITEURL;?>admin/update_order.php?id=<?php echo $id;?>" class="btn-primary" style="margin-right: 5px; padding: 20px;">Update</a>
+                                    <a href="<?php echo SITEURL;?>admin/update_order.php?id=<?php echo $id;?>" class="btn-primary" style="margin-right: 5px; padding: 20px;">Cập nhật</a>
                                 </td>
                              </tr>
                         <?php 
@@ -86,7 +86,7 @@
                 }else {
                     echo "
                         <tr>
-                            <td colspan='12' class='error'> Order Not Available ! </td>
+                            <td colspan='12' class='error'> Đặt đồ không tồn tại ! </td>
                         </tr>
                     ";
                 }

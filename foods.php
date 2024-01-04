@@ -19,7 +19,7 @@
     <div class="container">
         <!-- search here  -->
         <form class="d-flex mt-3" action="<?php echo SITEURL; ?>food-search.php" method="POST">
-            <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Tìm kiếm" name="search" aria-label="search">
             <button class="btn btn-outline-success" type="submit">Tìm</button>
         </form>
         <!-- content -->

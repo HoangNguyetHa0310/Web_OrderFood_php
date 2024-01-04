@@ -4,7 +4,7 @@
 <!-- Main content -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Category</h1>
+        <h1>Quản lý nguyên liệu</h1>
         <br><br>
 
         <?php
@@ -47,17 +47,17 @@
         ?>
 
         <br><br><br>
-        <a href="<?php echo SITEURL; ?>admin/add_categoty.php" class="btn-primary">Add Category</a>
+        <a href="<?php echo SITEURL; ?>admin/add_categoty.php" class="btn-primary">Thêm nguyên liệu</a>
         <br><br><br>
 
         <table class="tbl-full">
             <tr>
                 <th>STT</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Featured</th>
-                <th>Actives</th>
-                <th>Action</th>
+                <th>Tên nguyên liệu</th>
+                <th>Ảnh</th>
+                <th>Nguyên liệu đặc biệt</th>
+                <th>Trạng thái hoạt động</th>
+                <th>Chức năng</th>
             </tr>
 
             <?php
@@ -90,8 +90,8 @@
                             <td><?php echo $featured; ?></td>
                             <td><?php echo $active; ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update_category.php?id=<?php echo $id;?>" class="btn-primary" style="margin-right: 5px;">Update Category</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete_category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" class="btn-secondary">Delete Category</a>
+                                <a href="<?php echo SITEURL; ?>admin/update_category.php?id=<?php echo $id;?>" class="btn-primary" style="margin-right: 5px;">Cập nhật nguyên liệu</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete_category.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" class="btn-secondary">Xóa nguyên liệu</a>
                             </td>
                         </tr>
                     <?php
@@ -100,7 +100,7 @@
                 ?>
                     <tr>
                         <td colspan="6">
-                            <div class="error">No Category Add</div>
+                            <div class="error">Nguyên liệu chưa được thêm ! </div>
                         </td>
                     </tr>
 

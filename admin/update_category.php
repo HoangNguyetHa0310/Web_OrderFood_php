@@ -4,7 +4,7 @@ ob_start();
 ?>
 <div class="main-contant">
     <div class="wrapper">
-        <h1>Update Category</h1>
+        <h1>Cập nhật nguyên liệu</h1>
         <br><br> 
         <!-- Phuts 40 -->
 
@@ -41,14 +41,14 @@ ob_start();
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="tbl-30">
                 <tr >
-                    <td>Title</td>
+                    <td>Tên</td>
                     <td>
                         <input type="text" name="title" value="<?php echo $title;?>">
                     </td>
                 </tr>
 
                     <tr>
-                    <td>Current image</td>
+                    <td>Ảnh hiện tại</td>
                     <td>
                         <?php 
                         if ($current_image != "") {
@@ -58,14 +58,14 @@ ob_start();
                             <?php 
                         } else {
                             // <!-- hiển thị thông báo -->
-                            echo '<div class="error">Image not added</div>';
+                            echo '<div class="error">Ảnh chưa được thêm</div>';
                         }
                         ?>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>New image</td>
+                    <td>Ảnh mới </td>
                     <td>
                         <input type="file" name="image" onchange="displayImage(this)">
                         <br>
@@ -89,7 +89,7 @@ ob_start();
 
                 <tr>
                     <!-- Tinhs chat dac biet  -->
-                    <td>Featured</td>
+                    <td>Tính đặc biệt</td>
                     <td>
                         <input <?php if ($featured == 'Yes'){echo "checked";}?>  type="radio" name="featured" value="Yes"> Yes
                         <input <?php if ($featured == 'No') {echo "checked";}?>  type="radio" name="featured" value="No"> No
@@ -98,7 +98,7 @@ ob_start();
 
                 <tr>
                     <!-- co dang hoat dong khong  -->
-                    <td>Actives</td>
+                    <td>Hoạt động</td>
                     <td>
                         <input <?php if ($active == 'Yes'){echo "checked";}?> type="radio" name="active" value="Yes"> Yes
                         <input <?php if ($active == 'No') {echo "checked";}?> type="radio" name="active" value="No"> No
@@ -109,7 +109,7 @@ ob_start();
                     <td colspan="2">
                         <input type="hidden" name="current_image" value="<?php echo $current_image;?>">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" name="submit" value="Update category" class="btn-primary" style="padding: 12px; margin-top: 12px;">
+                        <input type="submit" name="submit" value="Cập nhật nguyên liệu" class="btn-primary" style="padding: 12px; margin-top: 12px;">
                     </td>
                 </tr>
 
@@ -146,7 +146,7 @@ ob_start();
                         $update = move_uploaded_file($source_path,$destination_path);
                         // 
                         if ($update == false) {
-                            $_SESSION['upload'] = '<div class="error">Add Images Failed!</div>';
+                            $_SESSION['upload'] = '<div class="error">Thêm ảnh thất bại!</div>';
                             header("location: ".SITEURL."admin/manage_category.php");
                             die();
                         }
@@ -156,7 +156,7 @@ ob_start();
                             $remove = unlink($remove_path);
                             // check img whether removed or not 
                             if ($remove == false) {
-                                $_SESSION['fail_remove'] = '<div class="error">Failed to remove current image !</div>';
+                                $_SESSION['fail_remove'] = '<div class="error">Di chuyển ảnh thất bại!</div>';
                                 header("location:".SITEURL."admin/manage_category.php");
                                 die();  // stop process
                             }
@@ -183,10 +183,10 @@ ob_start();
                 // redirect to manage category with message 
                 if ($res2 == true) {
                     // category update 
-                    $_SESSION['update'] = '<div class="success">Category update successfully !</div>';
+                    $_SESSION['update'] = '<div class="success">Cập nhật nguyên liệu thành công!</div>';
                     header("location: ".SITEURL."admin/manage_category.php");
                 }else {
-                    $_SESSION['update'] = '<div class="error">Category update Failed !</div>';
+                    $_SESSION['update'] = '<div class="error">Cập nhật nguyên liệu thất bại!</div>';
                     header("location: ".SITEURL."admin/manage_category.php");
                 }
 

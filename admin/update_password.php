@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Change Password</h1>
+        <h1>Thay đổi mật khẩu</h1>
         <br><br>
 
         <?php 
@@ -21,31 +21,31 @@
         <form action="" method="POST">
             <table class="tbl-30">
                 <tr>
-                    <td>Current password</td>
+                    <td> Mật khẩu hiện tại</td>
                     <td>
-                        <input type="password" name="current_password" placeholder="Current Password">
+                        <input type="password" name="current_password" placeholder="Mật khẩu hiện tại">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>New password</td>
+                    <td>Mật khẩu mới </td>
                     <td>
 
-                        <input type="password" name="new_password" placeholder="New Password">
+                        <input type="password" name="new_password" placeholder="Mật khẩu mới">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Comfirm password</td>
+                    <td>Xác nhận mật khẩu</td>
                     <td>
-                        <input type="password" name="comfirm_password" placeholder="Comfirm Password">
+                        <input type="password" name="comfirm_password" placeholder="Xác nhận">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Change Password" class="btn-primary" style="border: none; margin-top:12px; padding: 12px; border-radius: 3px; font-size: 16px;"> 
+                        <input type="submit" name="submit" value="Cập nhật" class="btn-primary" style="border: none; margin-top:12px; padding: 12px; border-radius: 3px; font-size: 16px;"> 
                     </td>
                 </tr>
             </table>
@@ -83,20 +83,20 @@
                     $res2 = mysqli_query($conn, $sql2);
                     // check 
                     if ($res2 == true) {
-                        $_SESSION['change_pass'] = '<div class="success"> Change success !</div> ';
+                        $_SESSION['change_pass'] = '<div class="success"> Thay đổi thành công !</div> ';
                         header("location: ".SITEURL."admin/manage_admin.php");
                     }else {
-                        $_SESSION['change_pass'] = '<div class="error"> Change failed !</div> ';
+                        $_SESSION['change_pass'] = '<div class="error"> Thay đổi thất bại !</div> ';
                         header("location: ".SITEURL."admin/manage_admin.php");
                     }
                     
 
                 }else {
-                    $_SESSION['pass_not_match'] = '<div class="error"> Password mismatch, Try again!</div> ';
+                    $_SESSION['pass_not_match'] = '<div class="error"> Mật khẩu không khớp, thử lại!</div> ';
                     header("location: ".SITEURL."admin/update_password.php");
                 }
             }else {
-                $_SESSION['user_not_found'] = '<div class="error"> User not found </div> ';
+                $_SESSION['user_not_found'] = '<div class="error"> Người dùng không được tìm thấy ! </div> ';
                 header("location: ".SITEURL."admin/manage_admin.php");
             }
         }

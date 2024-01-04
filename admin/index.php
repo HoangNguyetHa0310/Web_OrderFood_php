@@ -4,7 +4,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Control Panel</h1><br><br>
+        <h1>Bảng điều khiển</h1><br><br>
 
         <?php
             if (isset($_SESSION['login'])) {
@@ -26,7 +26,7 @@
             ?>
             
             <h1> <?php echo $count;?> </h1>
-            Categores
+            Nguyên liệu
         </div>
 
         <div class="col-4 text-center">
@@ -36,7 +36,7 @@
                 $count2 = mysqli_num_rows($res2);
             ?>
             <h1> <?php echo $count2;?> </h1>
-            Foods
+            Món ăn đang có
         </div>
 
         <div class="col-4 text-center">
@@ -46,7 +46,7 @@
                 $count3 = mysqli_num_rows($res3);
             ?>
             <h1> <?php echo $count3;?> </h1>
-            Total Orders
+            Tổng số order
         </div>
 
         <div class="col-4 text-center">

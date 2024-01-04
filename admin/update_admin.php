@@ -3,7 +3,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Update admin</h1>
+        <h1>Cập nhập admin</h1>
         <br><br>
 
         <?php
@@ -29,14 +29,14 @@
         <form action="" method="POST">
             <table class="tbl-30">
                 <tr>
-                    <td>Full Name: </td>
+                    <td>Họ & Tên: </td>
                     <td>
                         <input type="text" name="full_name" value="<?php echo $fullname; ?>">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>User Name: </td>
+                    <td>Tên tài khoản: </td>
                     <td>
                         <input type="text" name="username" value="<?php echo $username; ?>">
                     </td>
@@ -45,7 +45,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update admin" class="btn-primary" style="border: none; font-size: 16px; font-weight: 600; padding: 12px; ">
+                        <input type="submit" name="submit" value="Cập nhập admin" class="btn-primary" style="border: none; font-size: 16px; font-weight: 600; padding: 12px; ">
                     </td>
                 </tr>
 
@@ -74,10 +74,10 @@
         echo $res;
 
         if ($res == true ) {
-            $_SESSION["update"] = '<div class="success">Update Success Information Admin !</div>';
+            $_SESSION["update"] = '<div class="success">Cập nhập thông tin admin thành công !</div>';
             header("location:".SITEURL."admin/manage_admin.php");
         }else {
-            $_SESSION["update"] = '<div class="error">Update Success Information Admin !</div>';
+            $_SESSION["update"] = '<div class="error">Cập nhập thông tin admin thất bại !</div>';
             header("location:".SITEURL."admin/manage_admin.php");
         }
 

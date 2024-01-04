@@ -1,4 +1,9 @@
-<?php include("detail_front/menu.php") ?>
+
+<?php 
+ob_start();
+include("detail_front/menu.php");
+
+?>
 
     <?php 
         if (isset($_GET['food_id'])) {
@@ -36,7 +41,7 @@
                                 echo '<div class="error">Image Not Available!</div>';
                             }else {
                                 ?>
-                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" class="img-responsive img-curve">
+                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" class="img-responsive img-curve" style="width: 100px; height: 100px;">
                                 <?php 
                             }
                         ?>
@@ -50,7 +55,7 @@
                         <input type="hidden" name="price" value="<?php echo $price;?> ">
 
 
-                        <div class="order-label">Quantity</div>
+                        <div class="order-label">Số lượng</div>
                         <input type="number" name="qty" class="input-responsive" value="1" required>
                         
                     </div>
@@ -58,20 +63,20 @@
                 </fieldset>
                 
                 <fieldset>
-                    <legend>Delivery Details</legend>
-                    <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="E.g. Vijay Thapa" class="input-responsive" required>
+                    <legend>Thông tin giao hàng</legend>
+                    <div class="order-label">Họ & Tên</div>
+                    <input type="text" name="full-name" placeholder="E.g. Phan Van Hoang" class="input-responsive" required>
 
-                    <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required>
+                    <div class="order-label">Số điện thoại</div>
+                    <input type="tel" name="contact" placeholder="E.g. +84 123 xxxxxxxxx" class="input-responsive" required>
 
                     <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hi@vijaythapa.com" class="input-responsive" required>
+                    <input type="email" name="email" placeholder="E.g. abc123@gmail.com" class="input-responsive" required>
 
-                    <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
+                    <div class="order-label">Địa chỉ</div>
+                    <textarea name="address" rows="10" placeholder="E.g. My Dinh, Ha Noi, Viet Nam" class="input-responsive" required></textarea>
 
-                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
+                    <input type="submit" name="submit" value="Xác nhận đặt" class="btn btn-primary">
                 </fieldset>
 
             </form>
@@ -124,4 +129,7 @@
     <!-- fOOD sEARCH Section Ends Here -->
 
 
-<?php include("detail_front/footer.php") ?>
+<?php 
+include("detail_front/footer.php") ;
+ob_end_flush();
+?>

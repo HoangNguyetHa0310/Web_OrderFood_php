@@ -104,7 +104,7 @@
                 <h5 class="mb-4 fw-bold" >Bạn muốn ăn gì nào ? </h5>
 
                 <form class="d-flex" action="<?php echo SITEURL; ?>food-search.php" method="POST">
-                    <input class="form-control me-2" type="search" placeholder="Tìm Kiếm" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm Kiếm" name="search" aria-label="search">
                     <button class="btn btn-outline-success" type="submit">Tìm</button>
                 </form>
             </div>
@@ -262,7 +262,7 @@
     </div>
 
     <!-- Testimonials : Những lời đánh giá từ khách hàng -->
-    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font "> Bình Luận </h2>
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font "> Bình Luận Nổi Bật </h2>
     <div class="container mt-5">
         <div class="swiper swiper-testimonials">
             <div class="swiper-wrapper mb-5">

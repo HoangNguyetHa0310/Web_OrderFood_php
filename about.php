@@ -2,24 +2,27 @@
 <?php include("detail_front/menu.php") ?>
 
     <div class="my-5 px-4">
-        <h2 class="fw-bold h-font text-center">About Us</h2>
+        <h2 class="fw-bold h-font text-center">Giới Thiệu </h2>
         <div class="h-line bg-dark"></div>
         <p class="text-center mt-3">
-            We have a lot of new and interesting things. Feel free to experience it
+           Đội ngũ chuyên nghiệp tạo lên những món ăn tuyệt vời và những trải nghiệm thú vị !
         </p>
     </div>
 
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-2">
-                <h3 class="mb-3">Our array of new and captivating offerings invites you to experience the extraordinary</h3>
-                <p>
-                    Explore a world of novelty and excitement at our venue.
-                    Unveil a myriad of new and intriguing offerings, inviting you to freely immerse yourself in a rich tapestry of experiences.
-                    Your journey awaits—delight in the discovery of all the captivating and innovative elements we have in store for you.
-                    Embark on a journey of endless possibilities as we present a plethora of new and interesting things.
-                    Feel free to dive into the excitement and make each moment uniquely yours. Uncover surprises, savor discoveries, and create memories that linger long after your visit.
-                    The adventure is yours to embrace!
+                <h3 class="mb-3">CEO: Phan Văn Hoàng </h3>
+                <p style="text-align: justify;">
+                Chào mừng bạn đến với gia đình chúng tôi, nơi mà sứ mệnh và đam mê hội tụ để tạo ra những đột phá không ngừng. 
+                Dưới sự lãnh đạo tận tâm và tầm nhìn đổi mới của Giám đốc Công ty, 
+                chúng tôi không chỉ xây dựng một doanh nghiệp mà còn xây dựng một cộng đồng mạnh mẽ và đoàn kết.
+
+                Chúng tôi cam kết đem lại giá trị không chỉ cho khách hàng và đối tác mà còn cho từng thành viên trong đại gia đình chúng tôi. 
+                Qua sự sáng tạo và nỗ lực không ngừng, chúng tôi định hình tương lai không chỉ cho doanh nghiệp mà còn cho cộng đồng và thế giới xung quanh.
+
+                Hãy cùng nhau bước vào hành trình này, nơi những ước mơ trở thành hiện thực và thành công không có giới hạn. 
+                Chúng ta là những người xây dựng tương lai, và tại đây, mỗi thành viên đều là nhân tố quan trọng, đóng góp vào câu chuyện lớn của chúng tôi. Xin chân thành cảm ơn vì bạn là một phần quan trọng của chúng tôi, và chúng tôi rất hân hạnh chia sẻ hành trình này cùng bạn!
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-1">
@@ -33,34 +36,34 @@
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
                     <img src="images/about/hotel.svg" width="70px">
-                    <h4 class="mt-3"> 100+ Rooms</h4>
+                    <h4 class="mt-3"> 100+ Cơ sở </h4>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
                     <img src="images/about/customers.svg" width="70px">
-                    <h4 class="mt-3">200+ Customers</h4>
+                    <h4 class="mt-3">200+ Khách hàng</h4>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
                     <img src="images/about/rating.svg" width="70px">
-                    <h4 class="mt-3">150+ Revivews</h4>
+                    <h4 class="mt-3">150+ Đánh giá</h4>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
                     <img src="images/about/staff.svg" width="70px">
-                    <h4 class="mt-3">100+ Staffs</h4>
+                    <h4 class="mt-3">100+ NV Hỗ Trợ</h4>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3 class="my-5 fw-bold h-font text-center">Management Team</h3>
+    <h3 class="my-5 fw-bold h-font text-center">Đội ngũ quản lý </h3>
     <div class="container px-4">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">

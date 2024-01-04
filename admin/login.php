@@ -30,11 +30,11 @@
         <!-- login  -->
         <form action="" method="POST">
 
-            <label for="username">User Name</label><br>
-            <input id="username" type="text" name="username" placeholder="Enter Name" style="width: 100%; font-size: 16px; padding: 4px;"><br><br>
+            <label for="username">Tên tài khoản</label><br>
+            <input id="username" type="text" name="username" placeholder="Enter tên" style="width: 100%; font-size: 16px; padding: 4px;"><br><br>
 
-            <label for="password">Password</label><br>
-            <input id="password" type="password" name="password" placeholder="Enter Password" style="width: 100%; font-size: 16px; padding: 4px;" ><br><br>
+            <label for="password">Mật khẩu</label><br>
+            <input id="password" type="password" name="password" placeholder="Enter mật khẩu" style="width: 100%; font-size: 16px; padding: 4px;" ><br><br>
 
             <input type="submit" name="submit" value="Login" class="btn-primary" style="margin: 12px 0 12px 45%;  padding: 14px; ">
 
@@ -62,11 +62,11 @@
         $count = mysqli_num_rows($res);
 
         if ($count == 1 ) {
-            $_SESSION['login'] = '<div class="success"> Login Success ! </div>';
+            $_SESSION['login'] = '<div class="success"> Đăng nhập thành công ! </div>';
             $_SESSION['user'] = $username;
             header("location: ".SITEURL."admin/");
         }else {
-            $_SESSION['login'] = '<div class="error"> Username or Password incorrect ! </div>';
+            $_SESSION['login'] = '<div class="error">Tên hoặc mật khẩu không đúng ! </div>';
             header("location: ".SITEURL."admin/login.php");
         }
 

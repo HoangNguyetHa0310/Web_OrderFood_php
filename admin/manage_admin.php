@@ -4,7 +4,7 @@
 <!-- Main content -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Admin</h1>
+        <h1>Quản lý Admin</h1>
 
         <!-- btn add admin  -->
         <br><br>
@@ -46,15 +46,15 @@
 
 
         <br><br><br>
-        <a href="add_admin.php" class="btn-primary">Add Admin</a>
+        <a href="add_admin.php" class="btn-primary">Thêm Admin</a>
         <br><br><br>
 
         <table class="tbl-full">
             <tr>
                 <th>STT</th>
-                <th>Full Name</th>
-                <th>User Name</th>
-                <th>Actions </th>
+                <th>Họ & Tên</th>
+                <th>Tên tài khoản</th>
+                <th>Chức năng </th>
             </tr>
 
             <?php
@@ -82,9 +82,9 @@
                             <td><?php echo $full_name ?></td>
                             <td><?php echo $username ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update_password.php?id=<?php echo $id; ?>" class="btn-danger">Change Password</a>
-                                <a href="<?php echo SITEURL; ?>admin/update_admin.php?id=<?php echo $id; ?>" class="btn-primary" style="margin:0 5px; border-radius: 3px;">Update Admin</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete_admin.php?id=<?php echo $id; ?> " class="btn-secondary" style="border-radius: 3px;">Delete Admin </a>
+                                <a href="<?php echo SITEURL; ?>admin/update_password.php?id=<?php echo $id; ?>" class="btn-danger">Thay đổi Password</a>
+                                <a href="<?php echo SITEURL; ?>admin/update_admin.php?id=<?php echo $id; ?>" class="btn-primary" style="margin:0 5px; border-radius: 3px;">Cập nhập Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete_admin.php?id=<?php echo $id; ?> " class="btn-secondary" style="border-radius: 3px;">Xóa Admin </a>
                             </td>
                         </tr>
             <?php

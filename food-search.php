@@ -3,10 +3,10 @@
     <section class="food-search text-center">
         <div class="container">
             <?php 
-                // $search = isset($_POST['search']) ? $_POST['search'] : '';
+                $search = isset($_POST['search']) ? $_POST['search'] : '';
                 $search = mysqli_real_escape_string($conn, $_POST['search']);
             ?>
-            <h2>Foods on your search <a href="#" class="text-white">"<?php echo $search;?>"</a></h2>
+            <h2>Đồ ăn mà bạn tìm <a href="#" class="text-white">"<?php echo $search;?>"</a></h2>
         </div>
 
     </section>
@@ -14,7 +14,7 @@
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+            <h2 class="text-center">Menu đồ ăn</h2>
 
             <?php 
 
@@ -35,10 +35,10 @@
                                 <div class="food-menu-img">
                                 <?php 
                                     if ($image_name == "") {
-                                        echo '<div class="error">Images Not Available !</div>';
+                                        echo '<div class="error">Ảnh không có sẵn !</div>';
                                     }else {
                                         ?>
-                                            <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>"  class="img-responsive img-curve">
+                                            <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" style="width: 100px; height: 100px;" class="img-responsive img-curve">
                                         <?php 
                                     }
                                 ?>
@@ -53,7 +53,7 @@
                                     <br>
                                     <!-- check image -->
 
-                                    <a href="#" class="btn btn-primary">Order Now</a>
+                                    <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="btn btn-primary">Đặt Ngay</a>
                                 </div>
                             </div>
                         <?php    

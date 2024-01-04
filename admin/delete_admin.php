@@ -13,10 +13,10 @@
     $res = mysqli_query($conn , $sql);
 
     if ($res == true) {
-        $_SESSION['delete'] = '<div class="success">Admin Delete Success !</div>';
+        $_SESSION['delete'] = '<div class="success">Xóa admin thành công !</div>';
         header("location: ".SITEURL."admin/manage_admin.php");
     }else {
-        $_SESSION['delete'] = '<div class="error">Admin Delete Failed!</div>';
+        $_SESSION['delete'] = '<div class="error">Xóa admin thất bại !</div>';
         header("location: ".SITEURL."admin/manage_admin.php");
     }
 

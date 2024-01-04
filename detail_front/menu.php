@@ -60,19 +60,29 @@
 
                     <div class="d-flex">
                         <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Gọi cho admin 
+                        </button>
+                        <button type="button" class="btn btn-outline-dark shadow-none " data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Lịch sử
+                        </button>
+                    </div>
+
+                    <!-- <div class="d-flex">
+                        <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
                             Login
                         </button>
                         <button type="button" class="btn btn-outline-dark shadow-none " data-bs-toggle="modal" data-bs-target="#registerModal">
                             Register
                         </button>
-                    </div>
+                    </div> -->
+                    
                 </div>
             </div>
         </nav>
     </div>
 
-    <div class="login_res">
-        <!-- Modal -->
+    <!-- Modal -->
+    <!-- <div class="login_res">
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -185,6 +195,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    
 </div>
     
