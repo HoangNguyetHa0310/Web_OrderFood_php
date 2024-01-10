@@ -41,11 +41,11 @@
                                     echo '<div class="error">Thêm ảnh thất bại!</div>';
                                 } else {
                                 ?>
-                                    <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: -27px; border-radius: 3px;">
+                                    <img src="<?= SITEURL; ?>images/category/<?= $image_name; ?>" class="img-responsive img-curve" style="max-width: 100%; height: 450px; object-fit: cover;  object-position: center center; margin-top: -27px; border-radius: 3px;">
                                 <?php
                                 }
                                 ?>
-                                <div class="card-body">
+                                <div class="card-body float-left">
                                     <h4 class="card-title text-dark" style="float: left;"><?= $title; ?></h4>
                                     <span style="color: blue;">
                                         <i class="bi bi-egg-fill" ></i> Còn 
@@ -53,7 +53,7 @@
                                     </span><br>
                                     <span style="color: red;">
                                         <i class="bi bi-egg-fried"></i>
-                                        <span id="<?= $randomEgg; ?>"> Sắp hết hàng </span>
+                                        <span id="<?= $randomEgg; ?>"> Bán chạy ! </span>
                                     </span>
                                 </div>
                                 <script>

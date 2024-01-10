@@ -59,12 +59,16 @@
                     </ul>
 
                     <div class="d-flex">
-                        <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#callAdmin">
                             Gọi cho admin 
                         </button>
-                        <button type="button" class="btn btn-outline-dark shadow-none " data-bs-toggle="modal" data-bs-target="#registerModal">
-                            Lịch sử
-                        </button>
+
+                        <a href="<?php echo SITEURL; ?>cart.php" style="text-decoration: none;">
+                            <button type="button" class="btn btn-outline-dark shadow-none " data-bs-toggle="modal" data-bs-target="#viewCart">
+                                Giỏ hàng
+                            </button>
+                        </a>
+
                     </div>
 
                     <!-- <div class="d-flex">
@@ -196,6 +200,81 @@
             </div>
         </div>
     </div> -->
+
+    <!-- Contact admin -->
+    <div class="login_res"> 
+        <div class="modal fade" id="callAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form action="">
+                        <div class="modal-header">
+                            <h5 class="modal-title d-flex align-items-center">
+                                <i class="bi bi-person-add fs-3 me-2"></i>
+                                Phản hồi của người dùng 
+                            </h5>
+                            <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+        
+                        <div class="modal-body">
+                            <span class="badge rounded-pill bg-light text-dark text-dark mb-3 text-wrap lh-base   ">
+                                Lưu ý: Phản hồi này đánh giá tình huống bạn gặp (Sự cố bất ngờ), hãy điền chính xác những thông tin dưới đây ! 
+                            </span>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 ps-0 mb-3">
+                                        <label class="form-label ">Họ & Tên</label>
+                                        <input type="text" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-6 p-0 mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-6 ps-0 mb-3">
+                                        <label class="form-label ">Số Điện Thoại </label>
+                                        <input type="number" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-6 p-0 mb-3">
+                                        <label class="form-label">Ảnh</label>
+                                        <input type="file" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-12 p-0 mb-3">
+                                        <label class="form-label">Địa Chỉ</label>
+                                        <textarea class="form-control shadow-none" rows="1"></textarea>
+                                    </div>
+        
+                                    <div class="col-md-6 ps-0 mb-3">
+                                        <label class="form-label">Tên món ăn </label>
+                                        <input type="number" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-6 p-0 mb-3">
+                                        <label class="form-label">Ngày đặt</label>
+                                        <input type="date" class="form-control shadow-none ">
+                                    </div>
+        
+                                    <div class="col-md-12 ps-0 mb-3">
+                                        <label class="form-label">Lý do </label>
+                                        <textarea rows="5" class="form-control shadow-none " style=" width: 100%; box-sizing: border-box; resize: vertical; "></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+        
+                            <div class="text-center my-1">
+                                <button type="submit" class="btn btn-primary shadow-none">
+                                    Gửi !
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </div>
     

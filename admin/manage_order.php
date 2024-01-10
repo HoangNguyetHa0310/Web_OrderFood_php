@@ -1,6 +1,37 @@
 <!--menu Header navbar  -->
 <?php require("detail/menu.php") ?>
 
+<style>
+    .table-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .status-cell {
+        width: 200px; /* Kích thước cố định */
+        text-align: center; /* Căn giữa nội dung trong ô */
+    }
+
+    .status-label {
+        display: inline-block;
+        max-width: 100%; /* Tối đa chiều rộng là 100% của ô */
+        overflow: hidden; /* Ngăn chữ vượt ra khỏi ô */
+        text-overflow: ellipsis; /* Hiển thị dấu elipsis (...) nếu nội dung quá dài */
+        white-space: nowrap; /* Ngăn chữ xuống dòng */
+    }
+</style>
+
 <!-- Main content -->
 <div class="main-content">
     <div class="wrapper">
@@ -25,10 +56,9 @@
                 <th>Số lượng </th>
                 <th>Tổng </th>
                 <th>Ngày đặt</th>
-                <th>Trạng thái</th>
+                <th style="text-align: center;">Trạng thái</th>
                 <th>Tên khách</th>
                 <th>Liên hệ</th>
-                <th>Email </th>
                 <th>Địa chỉ </th>
                 <th>Chức năng </th>
             </tr>
@@ -60,25 +90,25 @@
                                 <td> <?php echo $qty;?> </td>
                                 <td> <?php echo $total;?> </td>
                                 <td> <?php echo $order_date;?> </td>
-                                <td>
+                                <td class="status-cell">
                                     <?php 
                                         if($status == 'Ordered') {
-                                            echo "<lable class='success' style='width: 50px;'> $status  </lable>";
-                                        }elseif($status == 'Delivering') {
-                                            echo "<lable class='warning' style='width: 50px;'> $status  </lable>";
-                                        }elseif($status == 'Delivered') {
-                                            echo "<lable class='warning-2' style='width: 50px;'> $status  </lable>";
-                                        }elseif($status == 'Cancelled'){
-                                            echo "<lable class='error' style='width: 50px;'> $status  </lable>";
+                                            echo "<lable class='status-label success'> $status  </lable>";
+                                        } elseif($status == 'Delivering') {
+                                            echo "<lable class='status-label warning'> $status  </lable>";
+                                        } elseif($status == 'Delivered') {
+                                            echo "<lable class='status-label warning-2'> $status  </lable>";
+                                        } elseif($status == 'Cancelled') {
+                                            echo "<lable class='status-label error'> $status  </lable>";
                                         }
                                     ?>
                                 </td>
+
                                 <td> <?php echo $customer_name;?> </td>
                                 <td> <?php echo $customer_contact;?> </td>
-                                <td> <?php echo $customer_email;?> </td>
                                 <td> <?php echo $customer_address;?> </td>
                                 <td>
-                                    <a href="<?php echo SITEURL;?>admin/update_order.php?id=<?php echo $id;?>" class="btn-primary" style="margin-right: 5px; padding: 20px;">Cập nhật</a>
+                                    <a href="<?php echo SITEURL;?>admin/update_order.php?id=<?php echo $id;?>" class="btn btn-primary" style="padding: 15px;">Sửa</a>
                                 </td>
                              </tr>
                         <?php 
