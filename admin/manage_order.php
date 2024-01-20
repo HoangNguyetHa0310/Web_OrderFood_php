@@ -48,7 +48,7 @@
         <br><br><br>
         <a href="<?php echo SITEURL; ?>admin/add_categoty.php" class="btn-primary">Thêm đặt đồ</a>
         <br><br><br>
-        <table class="tbl-full">
+        <table style="width: 100%;">
             <tr>
                 <th>STT</th>
                 <th>Tên đồ ăn</th>

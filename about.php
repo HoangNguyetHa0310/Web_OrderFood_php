@@ -26,7 +26,7 @@
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-1">
-                <img src="images/about/about.jpg" class="w-100">
+                <img src="images/about/main.jpg" class="w-100">
             </div>
         </div>
     </div>

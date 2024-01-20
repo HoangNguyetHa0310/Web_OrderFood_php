@@ -11,7 +11,6 @@
                 echo $_SESSION['login'];
                 unset($_SESSION['login']); // xoa bo session bang
             }
-
            
         ?>
         <br><br>
@@ -70,8 +69,6 @@
     </div>
 
 </div>
-
-
 
 <!-- footer  -->
 <?php require("detail/footer.php") ?>

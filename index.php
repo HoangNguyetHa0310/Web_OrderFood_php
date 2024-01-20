@@ -384,8 +384,9 @@
         </div>
     </div>
 </div>
-<!-- thoong báo về đặt hàng success   -->
-<div class="position-fixed top-0 end-0 p-3" style="z-index:5; margin-top: 10%;">
+
+<!-- thông báo về đặt hàng success   -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index:5; margin-top: 5.6%;">
     <div id="liveToast" style="background-color: #009900;" class="toast hide text-white " role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <i class="bi bi-person-circle rounded me-2"></i>

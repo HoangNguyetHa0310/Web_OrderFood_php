@@ -45,7 +45,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Cập nhập admin" class="btn-primary" style="border: none; font-size: 16px; font-weight: 600; padding: 12px; ">
+                        <input onclick="return confirm('Bạn có chắc chắn muốn cập nhật không?');" type="submit" name="submit" value="Cập nhập admin" class="btn-primary" style="border: none; font-size: 16px; font-weight: 600; padding: 12px; ">
                     </td>
                 </tr>
 

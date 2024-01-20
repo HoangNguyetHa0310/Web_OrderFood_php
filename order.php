@@ -5,6 +5,33 @@ include("detail_front/menu.php");
 
 ?>
 
+<style>
+    @media (max-width: 739px) {
+        .order {
+            display: block !important;
+            width: 100%;
+        }
+
+        .imgAndPrice {
+            width: 100% !important;
+        }
+
+        .titleAndPrice {
+            width: 100%;
+        }
+        .qtyInput {
+            width: 100%;
+        }
+
+        .information {
+            width: unset !important;
+            margin: 0 !important;
+            
+        }
+    }
+</style>
+
+
     <?php 
         if (isset($_GET['food_id'])) {
             $food_id = $_GET['food_id'];
@@ -33,49 +60,55 @@ include("detail_front/menu.php");
 
             <legend style="display: flex; justify-content: center; align-items: center; font-size: 34px;">Đồ ăn bạn đã chọn </legend>
             <form action="" method="POST" class="order" style="display: flex; justify-content: space-between;">
-                <fieldset style="width: 50%;">
+                <fieldset class="imgAndPrice" style="width: 50%;">
                     <div class="food-menu-img">
                         <?php 
                             if ($image_name == "" ) {
                                 echo '<div class="error">Image Not Available!</div>';
                             }else {
                                 ?>
-                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" class="img-responsive img-curve" style="width: 90%; height: 450px; margin-top: 22px;">
+                                    <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" class="img-responsive img-curve" style="width: 100%; height: 450px; margin-top: 22px;">
                                 <?php 
                             }
                         ?>
                     </div>
     
-                    <div class="food-menu-desc">
-                        <h3 class="mt-4"><?php echo $title;?></h3>
-                        <input type="hidden" name="food" value="<?php echo $title;?>">
+                    <div class="food-menu-desc d-flex " style="justify-content: space-between; align-items: center;">
+                        <div class="titleAndPrice" style="width: 50%;">
+                            <h3 class="mt-4"><?php echo $title;?></h3>
+                            <input type="hidden" name="food" value="<?php echo $title;?>">
+    
+                            <p class="food-price"><?php echo $price;?> VND</p>
+                            <input type="hidden" name="price" value="<?php echo $price;?> ">
+                        </div>
 
-                        <p class="food-price"><?php echo $price;?> VND</p>
-                        <input type="hidden" name="price" value="<?php echo $price;?> ">
+                        <div class="qtyInput" style="width: 50%;">
+                            <div style="margin-top: -12px; font-size: 16px;" class="order-label">Số lượng</div>
+                            <input style="width: 100%;" type="number" name="qty" class="input-responsive" value="1" required>
+                        </div>
 
-
-                        <div style="margin-top: -12px;" class="order-label">Số lượng</div>
-                        <input type="number" name="qty" class="input-responsive" value="1" required>
                         
                     </div>
 
                 </fieldset>
                 
-                <fieldset style="width: 50%;">
+                <fieldset class="information" style="width: 50%; margin-left: 45px;">
                     <legend style=" display: flex; justify-content: center; font-size: 24px;">Thông tin giao hàng</legend>
                     <div class="order-label">Họ & Tên</div>
-                    <input style="width: 100%; padding: 4px 8px;" type="text" name="full-name" placeholder="E.g. Phan Van Hoang" class="input-responsive" required>
+                    <input id="full_name" style="width: 100%; padding: 4px 8px;" type="text" name="full-name" placeholder="E.g. Phan Van Hoang" class="input-responsive" required>
 
                     <div class="order-label">Số điện thoại</div>
-                    <input style="width: 100%; padding: 4px 8px;" type="tel" name="contact" placeholder="E.g. +84 123 xxxxxxxxx" class="input-responsive" required>
+                    <input id="phone" style="width: 100%; padding: 4px 8px;" type="tel" name="contact" placeholder="E.g. +84 123 xxxxxxxxx" class="input-responsive" required>
 
                     <div class="order-label">Email</div>
-                    <input style="width: 100%; padding: 4px 8px;" type="email" name="email" placeholder="E.g. abc123@gmail.com" class="input-responsive" required>
+                    <input id="email" style="width: 100%; padding: 4px 8px;" type="email" name="email" placeholder="E.g. abc123@gmail.com" class="input-responsive" required>
 
                     <div class="order-label">Địa chỉ</div>
-                    <textarea style="width: 100%; padding: 4px 8px;" name="address" rows="10" placeholder="E.g. My Dinh, Ha Noi, Viet Nam" class="input-responsive" required></textarea>
+                    <textarea id="address" style="width: 100%; padding: 4px 8px;" name="address" rows="10" placeholder="E.g. My Dinh, Ha Noi, Viet Nam" class="input-responsive" required></textarea>
 
-                    <input type="submit" name="submit" value="Xác nhận đặt" class="btn btn-primary">
+                    <input type="submit" onclick="return check();" name="submit" value="Xác nhận đặt" class="btn btn-primary">
+                    <a href="<?php echo SITEURL.'foods.php'; ?>" class="btn btn-danger ms-2">Hủy đặt</a>
+
                 </fieldset>
 
             </form>
@@ -133,4 +166,21 @@ include("detail_front/menu.php");
 include("detail_front/footer.php") ;
 ob_end_flush();
 ?>
+<script>
+    
+    function check() {
+        var fullname = document.getElementById('full_name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var address = document.getElementById('address').value;
+
+        if (fullname == "" && phone == "" && email == "" && address == "") {
+            alert("Vui lòng nhập đủ !");
+            return false;
+        }
+
+    }
+
+
+</script>
 

@@ -248,7 +248,7 @@
         
                                     <div class="col-md-6 ps-0 mb-3">
                                         <label class="form-label">Tên món ăn </label>
-                                        <input type="number" class="form-control shadow-none ">
+                                        <input type="text" class="form-control shadow-none ">
                                     </div>
         
                                     <div class="col-md-6 p-0 mb-3">
@@ -265,7 +265,7 @@
                             </div>
         
                             <div class="text-center my-1">
-                                <button type="submit" class="btn btn-primary shadow-none">
+                                <button id="send" onclick="return check()" type="submit" class="btn btn-primary shadow-none">
                                     Gửi !
                                 </button>
                             </div>
@@ -277,4 +277,28 @@
     </div>
     
 </div>
+
+<script>
     
+    function check() {
+        var inputs = document.getElementsByClassName("form-control");
+        var isValid = true;
+
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value === '') {
+                isValid = false;
+                break;  // Thoát khỏi vòng lặp nếu có ít nhất một ô trống
+            }
+        }
+
+        if (isValid) {
+            alert("Gửi thành công !");
+        } else {
+            alert("Vui lòng nhập đủ !");
+            return false;
+        }
+    }
+
+
+</script>
+        

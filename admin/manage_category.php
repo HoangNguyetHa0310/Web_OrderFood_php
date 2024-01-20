@@ -55,7 +55,7 @@
                 <th>STT</th>
                 <th>Tên nguyên liệu</th>
                 <th>Ảnh</th>
-                <th>Nguyên liệu đặc biệt</th>
+                <th>Nguyên liệu nổi bật</th>
                 <th>Trạng thái hoạt động</th>
                 <th>Chức năng</th>
             </tr>

@@ -1,6 +1,10 @@
 <!--menu Header navbar  -->
 <?php require("detail/menu.php") ?>
 
+<!-- thông báo  -->
+
+
+
 <!-- Main content -->
 <div class="main-content">
     <div class="wrapper">
@@ -84,7 +88,9 @@
                             <td>
                                 <a href="<?php echo SITEURL; ?>admin/update_password.php?id=<?php echo $id; ?>" class="btn-danger">Thay đổi Password</a>
                                 <a href="<?php echo SITEURL; ?>admin/update_admin.php?id=<?php echo $id; ?>" class="btn-primary" style="margin:0 5px; border-radius: 3px;">Cập nhập Admin</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete_admin.php?id=<?php echo $id; ?> " class="btn-secondary" style="border-radius: 3px;">Xóa Admin </a>
+                                <!-- <a href="<?php echo SITEURL; ?>admin/delete_admin.php?id=<?php echo $id; ?> " class="btn-secondary" style="border-radius: 3px;">Xóa Admin </a> -->
+                                <a href="<?php echo SITEURL; ?>admin/delete_admin.php?id=<?php echo $id; ?>" class="btn-secondary" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa Admin</a>
+
                             </td>
                         </tr>
             <?php
@@ -99,7 +105,6 @@
     </div>
 
 </div>
-
 
 <!-- footer  -->
 <?php require("detail/footer.php") ?>

@@ -44,7 +44,7 @@
                 <th>Tên</th>
                 <th>Giá</th>
                 <th>Ảnh</th>
-                <th>Tính đặc biệt</th>
+                <th>Món ăn nổi bật</th>
                 <th>Hoạt động</th>
                 <th>Chức năng</th>
             </tr>
